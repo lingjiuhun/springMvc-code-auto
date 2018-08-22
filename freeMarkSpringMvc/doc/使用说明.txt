@@ -1,0 +1,36 @@
+引用jar包：
+fastjson-1.1.41
+freemarker-2.3.16   
+
+代码模板使用
+1.将该工程下src下ftl整个文件夹拷贝到springMvc工程src下
+
+代码生成使用实例：
+import com.xadevops.freeMark.automark.AutoMakeCode;
+import com.xadevops.sis.hazards.model.HazardsInfo;
+
+public class AutoTest {
+   public static void main(String[] args) {
+   
+   		//获取代码生成操作对象
+	   HazardsInfo o = new HazardsInfo();
+	   
+       //根据操作对象全部生产,参数说明见api稳定
+	   AutoMakeCode.generalAll(o, "id", "id");
+		
+	   //指定路径生成相关js和jsp	,参数说明见api稳定
+	   AutoMakeCode.makeAddjs(o, "id", "modules/hazardsinfo/info/js/");
+	   AutoMakeCode.makeAddjsp(o, "id", "modules/hazardsinfo/info/jsp/");
+	   
+	   AutoMakeCode.makeDetailjs(o, "id", "modules/hazardsinfo/info/js/");
+	   AutoMakeCode.makeDetailjsp(o, "id", "modules/hazardsinfo/info/jsp/");
+	   
+	   AutoMakeCode.makeEditjs(o, "id", "modules/hazardsinfo/info/js/");
+	   AutoMakeCode.makeEditjsp(o, "id", "modules/hazardsinfo/info/jsp/");
+	   
+	   AutoMakeCode.makeListjs(o, "id", "modules/hazardsinfo/info/js/");
+	   AutoMakeCode.makeListjsp(o, "id", "modules/hazardsinfo/info/jsp/");
+	   
+}
+}
+
